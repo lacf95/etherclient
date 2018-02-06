@@ -2,10 +2,14 @@
 Ethermine API Client in Ruby
 [API](https://api.ethermine.org/docs/#api-Worker-miner_allWorkerStats)
 ## Instalation
-Clone or download this repository (for now there's no RubyGems gem)
+Clone or download this repository
 ```
 gem build ./etherclient.gemspec
 gem install ./etherclient-0.0.1.gem
+```
+Or just install fromm RubyGems
+```
+gem install etherclient
 ```
 ## How to use
 ```ruby
