@@ -3,7 +3,7 @@ require 'json'
 
 module EtherClient::Client
   ETHERMINE_URL = 'https://api.ethermine.org/'
-  ETHPOOL_URL = 'http://api.ethpool.org/'
+  ETHPOOL_URL = 'https://api.ethpool.org/'
 
   def ethermine_request(uri)
     send_request("#{ETHERMINE_URL}#{uri}")
@@ -16,6 +16,7 @@ module EtherClient::Client
   def send_request(url)
     request_uri = URI(url)
     response = Net::HTTP.get_response(request_uri)
+    binding.pry
     raise StandardError, response.body unless response.message == 'OK'
     JSON.parse(response.body)['data']
   end
