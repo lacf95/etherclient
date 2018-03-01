@@ -16,7 +16,6 @@ module EtherClient::Client
   def send_request(url)
     request_uri = URI(url)
     response = Net::HTTP.get_response(request_uri)
-    binding.pry
     raise StandardError, response.body unless response.message == 'OK'
     JSON.parse(response.body)['data']
   end
